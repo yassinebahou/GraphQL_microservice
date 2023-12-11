@@ -1,0 +1,40 @@
+mutation {
+    addEtudiant(etudiant: {
+        nom :"karim"
+        prenom:"ait bouaddi"
+        genre:"Homme"
+        centreId:1
+    })
+    {
+        id
+        nom
+        centre{
+            id
+        }
+    }
+}
+query {
+    getEtudiantById(id:1){
+        id
+        nom
+        prenom
+        centre{
+            nom
+            adresse
+        }
+    }
+}
+query{
+    listEtudiants{
+        id
+        nom
+        prenom
+        centre{
+            nom
+            adresse
+        }
+    }
+}
+mutation{
+  deleteEtudiant(id:1)
+}
